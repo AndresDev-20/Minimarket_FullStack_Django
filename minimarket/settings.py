@@ -47,7 +47,7 @@ ROOT_URLCONF = 'minimarket.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -111,6 +111,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+# settings.py
+
+# Ruta donde buscar archivos estáticos
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+
+# Ruta de acceso desde el navegador
 STATIC_URL = 'static/'
 
 # Default primary key field type
