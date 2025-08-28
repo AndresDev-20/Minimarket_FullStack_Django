@@ -1,3 +1,64 @@
-p {
-    color: red;
+:root {
+  --primary-color: rgba(59, 114, 255, 0.701);
+  --secondary-color: rgb(230, 239, 255);
+  --tertiary-color: rgb(190, 238, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: var(--primary-color);
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+}
+
+.login__container {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--tertiary-color);
+  padding: 1.5em;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form__input {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border: 1px solid var(--tertiary-color);
+  border-radius: 4px;
+}
+
+.form__button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  position: absolute;
+  bottom: 0;
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

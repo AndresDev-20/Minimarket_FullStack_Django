@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <header>
-        <h1>Dashboard</h1>
+    <header class="header">
+        {% block header %}
+        {% endblock %}
     </header>
 
     <main>

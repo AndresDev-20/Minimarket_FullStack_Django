@@ -1,6 +1,20 @@
 {% extends "layout/base.html" %} 
 
+{% block header %}
+<h1>Welcome, start session for open.</h1>
+{% endblock %}
+
 {% block content %}
-<h2>Welcome to the Dashboard</h2>
-<p>This is the main content area.</p>
+<div class="login__container">
+  <h1>Login</h1>
+  <form class="login__form" action="">
+    <label class for="username">Username:</label>
+    <input class="form__input" type="text" id="username" name="username" required />
+
+    <label class for="password">Password:</label>
+    <input class="form__input" type="password" id="password" name="password" required />
+
+    <button class="form__button" type="submit">Login</button>
+  </form>
+</div>
 {% endblock %}
