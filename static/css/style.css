@@ -1,5 +1,5 @@
 :root {
-  --primary-color: rgb(8, 21, 97);
+  --primary-color: #0b124b;
   --primary-hover-color: teal;
   --border-radius: 5em;
   --border-color: #ccc;
@@ -222,7 +222,6 @@ input:focus {
 }
 
 .dashboard__content {
-    background-color: aquamarine;
     width: 100%;
     margin-top: 5em;
 }
@@ -257,6 +256,91 @@ input:focus {
   gap: 1em;
 }
 
+
+/* estilos de la tabla de productos */
+.Products {
+  padding: 1.5em;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Header de productos */
+.Products__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.Products__header > h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.Products__header button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.Products__header button:hover {
+  background-color: #0056b3;
+}
+
+/* Tabla */
+.product__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product__table-header {
+  background-color: var(--primary-color);
+  text-align: left;
+}
+
+.product__table-header > th {
+  padding: 0.8em;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.product__table-row {
+  border: 1px solid var(--primary-color);
+  transition: background 0.2s ease-in-out;
+}
+
+.product__table-th {
+  padding: 0.9em;
+  font-size: 0.95em;
+  color: var(--text-color);
+}
+
+.product__table-cell {
+  padding: 0.9em;
+  font-size: 0.95em;
+}
+
+/* Botones de acciones */
+.product__table-button {
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+  font-size: 0.85em;
+  cursor: pointer;
+  margin-right: 0.4em;
+  transition: background 0.2s ease-in-out;
+}
+
+.product__table-button:hover {
+  background-color: var(--primary-color);
+}
 
 
 

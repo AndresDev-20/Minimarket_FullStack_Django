@@ -1,6 +1,41 @@
 {% extends 'dashboard/dashboard.html' %}
 
 {% block dashboard_content %}
+<div class="Products">
+<div class="Products__header"> 
   <h1>Products</h1>
-  <p>List of products will be displayed here.</p>
+  <button>Add Product</button>
+</div>
+
+<table class="product__table">
+  <thead class="product__table-header">
+    <tr class="product__table-row">
+      <th class="product__table-th">ID</th>
+      <th class="product__table-th">Name</th>
+      <th class="product__table-th">Price</th> 
+      <th class="product__table-th">Stock</th>
+      <th class="product__table-th">Is Active</th>
+      <th class="product__table-th">Category</th>
+      <th class="product__table-th">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="product__table-body">
+    {% for product in list_products %}
+    <tr class="product__table-row">
+      <td class="product__table-cell">{{ product.id }}</td>
+      <td class="product__table-cell">{{ product.name }}</td>
+      <td class="product__table-cell">{{ product.price }}</td>
+      <td class="product__table-cell">{{ product.stock }}</td>
+      <td class="product__table-cell">{{ product.is_active }}</td>
+      <td class="product__table-cell">{{ product.category }}</td>
+      <td class="product__table-cell">
+        <button class="product__table-button">Edit</button>
+        <button class="product__table-button">Delete</button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>  
+</div>
+
 {% endblock %}
