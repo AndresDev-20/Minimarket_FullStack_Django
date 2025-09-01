@@ -139,6 +139,67 @@ input:focus {
   background-color: teal;
 }
 
+
+
+
+/* estilos del header */
+.header {
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    background-color: var(--primary-color);
+}
+
+.header__logo > h1 {
+    font-size: 1.5em;
+    color: var(--text-color);
+    font-family: cursive;
+}
+
+.header__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header__logo > img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__user {
+    background: var(--text-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    padding: .4em;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 1.6em;
+    height: 1.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logout {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #333;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+}
+
+
+
+
 @media (max-width: 1100px) {
   .Login {
     flex-direction: column;

@@ -1,10 +1,9 @@
 {% extends "layout/base.html" %}
 
 {% block header %}
-<a href="{% url 'logout' %}">Cerrar sesión</a>
+    {% include "layout/header.html" %}
 {% endblock %}
 
 {% block content %}
-<h1>Dashboard</h1>
 <p>Welcome to the dashboard!</p>
 {% endblock %}
