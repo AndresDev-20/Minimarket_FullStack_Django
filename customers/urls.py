@@ -1,5 +1,6 @@
 from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('', lambda request: None, name='customer-list'),  # Placeholder view
+    path('', views.customer, name='customer'),
 ]
