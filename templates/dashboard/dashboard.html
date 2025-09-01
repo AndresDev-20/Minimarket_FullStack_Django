@@ -1,5 +1,9 @@
 {% extends "layout/base.html" %}
 
+{% block header %}
+<a href="{% url 'logout' %}">Cerrar sesión</a>
+{% endblock %}
+
 {% block content %}
 <h1>Dashboard</h1>
 <p>Welcome to the dashboard!</p>

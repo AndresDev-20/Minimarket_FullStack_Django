@@ -102,6 +102,8 @@ input:focus {
   outline: none; /* evita que aparezca al escribir */
 }
 
+
+
 .container2 {
   padding: 2em;
   display: flex;
