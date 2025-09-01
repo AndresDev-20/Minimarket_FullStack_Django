@@ -5,5 +5,13 @@
 {% endblock %}
 
 {% block content %}
-<p>Welcome to the dashboard!</p>
+<div class="dashboard">
+    <div class="dashboard__box-menu">
+        {% include "layout/menu.html" %}
+    </div>
+    <div class="dashboard__content"> 
+        {% block dashboard_content %}
+        <h1>dashboard</h1>
+        {% endblock %}
+    </div>
 {% endblock %}

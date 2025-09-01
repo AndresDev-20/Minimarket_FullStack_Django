@@ -1,7 +1,8 @@
 from django.urls import path
 from django.http import HttpResponse
+from . import views
 
 
 urlpatterns = [
-    path('', lambda request: HttpResponse("List of products")),
+    path('', views.product_list, name='products'),
 ]
