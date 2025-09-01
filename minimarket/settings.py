@@ -1,7 +1,5 @@
 from pathlib import Path
 from decouple import config
-import os
-from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -117,18 +115,13 @@ USE_TZ = True
 
 # settings.py
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-STATIC_URL = '/static/'
-
-# 👇 carpeta donde Django juntará todos los archivos estáticos
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# (Opcional, si tienes archivos propios dentro del proyecto)
+# Ruta donde buscar archivos estáticos
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    BASE_DIR / "static"
 ]
 
+# Ruta de acceso desde el navegador
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
