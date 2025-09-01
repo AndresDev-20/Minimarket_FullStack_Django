@@ -1,20 +1,52 @@
 {% extends "layout/base.html" %} 
 
-{% block header %}
-<h1>Welcome, start session for open.</h1>
-{% endblock %}
-
 {% block content %}
-<div class="login__container">
-  <h1>Login</h1>
-  <form class="login__form" action="">
-    <label class for="username">Username:</label>
-    <input class="form__input" type="text" id="username" name="username" required />
+<div class="Login">
+  <div class="login__container">
+    <div class="login__box">
+      <h1 class="login__title">Login</h1>
+      <form class="login__form" action="">
+        <div>
+          <label class="login__label" for="username">Username:</label>
+          <div class="input-container">
+            <i class="fa-solid fa-user"></i>
+            <input
+              class="login__input"
+              type="text"
+              id="username"
+              name="username"
+              required
+              placeholder="Andres.dev"
+            />
+          </div>
+        </div>
+        <div>
+          <label class="login__label" for="password">Password:</label>
+          <div class="input-container">
+            <input
+              class="login__input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="********"
+              required
+            />
+          </div>
+        </div>
 
-    <label class for="password">Password:</label>
-    <input class="form__input" type="password" id="password" name="password" required />
+        <button class="login__button" type="submit">Login</button>
+      </form>
+    </div>
+  </div>
 
-    <button class="form__button" type="submit">Login</button>
-  </form>
+  <div class="login__container container2">
+    <h1 class="login__title2">Welcome to Dashboard</h1>
+    <p class="login__text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, earum.
+      Harum placeat excepturi temporibus! Eaque, accusamus. Voluptatem
+      consequatur fugit incidunt qui optio libero explicabo illum, fugiat nisi a
+      eveniet impedit.
+    </p>
+  </div>
 </div>
 {% endblock %}
