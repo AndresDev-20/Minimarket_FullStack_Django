@@ -14,7 +14,6 @@ SECRET_KEY = 'django-insecure-hf-5x!-1jw7w+d64mt8_($n=q66(mfak)-559kl&avwmni9=+v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['minimarket-fullstack-django.onrender.com', 'localhost', '127.0.0.1']
 
 
 
