@@ -21,7 +21,8 @@ class Category(models.Model):
 class Product(models.Model): 
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, related_name='products', null=True)
     name = models.CharField(max_length=255, null=False, blank=False)
-    price = models.DecimalField(max_digits=10, decimal_places=2, null=False, blank=False)
+    purchase_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    sale_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     description = models.TextField(null=True, blank=True)
     stock = models.PositiveIntegerField(default=0, null=False, blank=False)
     is_active = models.BooleanField(default=True)
