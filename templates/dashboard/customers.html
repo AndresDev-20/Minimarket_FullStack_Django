@@ -1,6 +1,42 @@
-{% extends "dashboard/dashboard.html" %}
-
+{% extends "dashboard/dashboard.html" %} 
 {% block dashboard_content %}
-  <h1>Customers</h1>
-  <p>List of customers will be displayed here.</p>
+<div class="Customers">
+  <h1 class="Customers__title">Clientes</h1>
+  <div class="Customers__search">
+    <input class="Customers__search-input" type="number" placeholder="Busca por CC" />
+    <button class="Customers__add-button">Crear Cliente</button>
+  </div>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Identificación</th>
+      <th>Correo</th>
+      <th>Teléfono</th>
+      <th>Creado</th>
+      <th>Compras</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for customer in customers %}
+    <tr>
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.first_name }}</td>
+      <td>{{ customer.cc }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phone_number }}</td>
+      <td>{{ customer.created_at }}</td>
+      <td>Ver Compras</td>
+      <td class="Buttons__actions">
+        <a class="Button__edit" href="">Editar</a>
+        <a class="Button__delete" href="">Eliminar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
 {% endblock %}

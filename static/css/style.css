@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #0b124b;
+  --primary-color: #176a7e;
   --primary-hover-color: teal;
   --border-radius: 5em;
   --border-color: #ccc;
@@ -291,57 +291,74 @@ input:focus {
   background-color: #0056b3;
 }
 
-/* Tabla */
-.product__table {
+/* Tablas */
+table {
   width: 100%;
+  text-align: center;
   border-collapse: collapse;
+  margin-top: 2em;
+  font-size: 14px;
 }
 
-.product__table-header {
+thead {
   background-color: var(--primary-color);
-  text-align: left;
+  text-align: center;
 }
 
-.product__table-header > th {
-  padding: 0.8em;
-  font-size: 0.9em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.product__table-row {
+tr {
   border: 1px solid var(--primary-color);
   transition: background 0.2s ease-in-out;
 }
 
-.product__table-th {
+th {
   padding: 0.9em;
-  font-size: 0.95em;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  font-weight: 600;
   color: var(--text-color);
 }
 
-.product__table-cell {
-  padding: 0.9em;
-  font-size: 0.95em;
+td {
+  padding: 0.7em;
 }
+
+
 
 /* Botones de acciones */
-.product__table-button {
-  background-color: var(--primary-color);
-  border: none;
-  color: #fff;
-  padding: 0.4em 0.8em;
-  border-radius: 6px;
-  font-size: 0.85em;
-  cursor: pointer;
-  margin-right: 0.4em;
-  transition: background 0.2s ease-in-out;
+.Buttons__actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
 }
 
-.product__table-button:hover {
-  background-color: var(--primary-color);
+.Button__edit{
+  background-color: rgb(0, 98, 255);
+  padding: .3em;
+  width: 100%;
+  max-width: 90px;
+  color: white;
+  border-radius: 4px;
 }
 
+.Button__delete{
+  background-color: red;
+  padding: .3em;
+  width: 100%;
+  max-width: 90px;
+  color: white;
+  border-radius: 4px;
+} 
+
+/* Estilos para la tabla de clientes */
+.Customers {
+  padding: 1.5em;
+}
+
+.Customers__title {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--primary-color);
+}
 
 
 @media (max-width: 1100px) {

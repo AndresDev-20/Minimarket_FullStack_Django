@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Customer
 
 # Create your views here.
 def customer(request):
-    return render(request, 'dashboard/customers.html')
+    customers = Customer.objects.all()
+    return render(request, 'dashboard/customers.html', {'customers': customers})
