@@ -1,0 +1,37 @@
+{% extends 'dashboard/dashboard.html' %}
+
+{% block dashboard_content %}
+<div class="Categories">
+  <div class="Categories__header">
+    <h1>Categories</h1>
+    <div class="Categories__actions">
+      <a href="{% url 'products' %}">Volver a products</a>
+      <a href="{% url 'category_create' %}">Add Category</a>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for category in list_categories %}
+      <tr>
+        <td>{{ category.id }}</td>
+        <td>{{ category.name }}</td>
+        <td class="Buttons__actions">
+          <a class="Button__edit" href="">Editar</a>
+          <a class="Button__delete" href="">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

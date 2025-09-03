@@ -1,0 +1,15 @@
+{% extends 'dashboard/dashboard.html' %}
+
+{% block dashboard_content %}
+<div class="product-form">
+  <a href="{% url 'products' %}" class="product-form__back">← Volver a la lista de productos</a>
+  
+  <h1 class="product-form__title">Agregar Producto</h1>
+  
+  <form method="POST" class="product-form__form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="product-form__btn">Crear Producto</button>
+  </form>
+</div>
+{% endblock %}

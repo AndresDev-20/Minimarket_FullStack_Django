@@ -1,0 +1,10 @@
+{% extends 'dashboard/dashboard.html' %}
+
+{% block dashboard_content %}
+  <h1>Create Category</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create</button>
+  </form>
+{% endblock %}
