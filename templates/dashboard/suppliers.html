@@ -1,6 +1,41 @@
 {% extends "dashboard/dashboard.html" %}
 
 {% block dashboard_content %}
-  <h1>Suppliers</h1>
-  <p>List of suppliers will be displayed here.</p>
+  <div class="Suppliers">
+    <div class="Suppliers__header">
+      <h2>Lista de Proveedores</h2>
+      <button class="Button__add">Añadir Proveedor</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Contacto</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Dirección</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for supplier in list_suppliers %}
+        <tr>
+          <td>{{ supplier.id }}</td>
+          <td>{{ supplier.name }}</td>
+          <td>{{ supplier.contact_person }}</td>
+          <td>{{ supplier.email }}</td>
+          <td>{{ supplier.phone }}</td>
+          <td>{{ supplier.address }}</td>
+          <td class="Buttons__actions">
+            <a class="Button__edit" href="">Editar</a>
+            <a class="Button__delete" href="">Eliminar</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
 {% endblock %}

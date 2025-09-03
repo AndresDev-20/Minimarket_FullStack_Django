@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Supplier
 
 # Create your views here.
 def supplier(request):
-    return render(request, 'dashboard/suppliers.html')
+    list_suppliers = Supplier.objects.all()
+    return render(request, 'dashboard/suppliers.html', {'list_suppliers': list_suppliers})

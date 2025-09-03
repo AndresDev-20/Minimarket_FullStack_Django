@@ -360,6 +360,38 @@ td {
   color: var(--primary-color);
 }
 
+.Customers__search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+/* Estilos para la tabla de proveedores */
+.Suppliers {
+  padding: 1.5em;
+}
+
+.Suppliers__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.Button__add {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.Button__add:hover {
+  background-color: #0056b3;
+}
 
 @media (max-width: 1100px) {
   .Login {
