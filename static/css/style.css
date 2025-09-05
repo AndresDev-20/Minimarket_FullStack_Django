@@ -268,18 +268,9 @@ input:focus {
   color: var(--primary-color);
 }
 
-.Products__header button {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  border: none;
-  padding: 0.5em 1.2em;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s ease-in-out;
-}
-
-.Products__header button:hover {
-  background-color: #0056b3;
+.Products__actions {
+  display: flex;
+  gap: 1em;
 }
 
 /* Tablas */
@@ -338,6 +329,37 @@ td {
   border-radius: 4px;
 }
 
+/* estilos de las categorias */
+.Categories {
+  padding: 1.5em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.Categories__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.Categories__header > h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.Categories__actions {
+  display: flex;
+  gap: 1em;
+}
+
+.Button__back {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+
 /* Estilos para la tabla de clientes */
 .Customers {
   padding: 1.5em;
@@ -382,6 +404,16 @@ td {
   background-color: #0056b3;
 }
 
+.Button__view {
+  background-color: #0056b3;
+  color: var(--text-color);
+  border: none;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
 /* estilos de formularios */
 .product-form {
   width: 100%;
@@ -413,15 +445,20 @@ td {
     text-align: center;
 }
 
+.product-form__form {
+    display: flex;
+    flex-direction: column;
+}
+
 .product-form__form p {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .product-form__form label {
     display: block;
     font-size: 14px;
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 3px;
 }
 
 .product-form__form input,

@@ -2,12 +2,10 @@
 
 {% block dashboard_content %}
 <div class="Categories">
+  <a class="Button__back" href="{% url 'products' %}">← Volver a products</a>
   <div class="Categories__header">
     <h1>Categories</h1>
-    <div class="Categories__actions">
-      <a href="{% url 'products' %}">Volver a products</a>
-      <a href="{% url 'category_create' %}">Add Category</a>
-    </div>
+      <a class="Button__add" href="{% url 'category_create' %}">Add Category</a>
   </div>
 
   <table>

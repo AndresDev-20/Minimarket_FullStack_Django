@@ -4,8 +4,10 @@
 <div class="Products">
 <div class="Products__header"> 
   <h1>Products</h1>
-  <a href="{% url 'product_create' %}">Add Product</a>
-  <a href="{% url 'category' %}">Categorias</a>
+  <div class="Products__actions">
+    <a class="Button__add" href="{% url 'product_create' %}">Nuevo Producto</a>
+    <a class="Button__view" href="{% url 'category' %}">Ver Categorias</a>
+  </div>
 </div>
 
 <table>
