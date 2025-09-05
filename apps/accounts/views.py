@@ -13,16 +13,16 @@ def login_view(request):
                 login(request, user)
                 return redirect('dashboard')
             else:
-                return render(request, 'index.html', {'error': 'No tienes permisos de administrador.'})
+                return render(request, 'login.html', {'error': 'No tienes permisos de administrador.'})
         else:
-            return render(request, 'index.html', {'error': 'Credenciales inválidas.'})
-    return render(request, 'index.html')
+            return render(request, 'login.html', {'error': 'Credenciales inválidas.'})
+    return render(request, 'login.html')
 
 
 
 @login_required
 def dashboard_view(request):
-    return render(request, 'dashboard/dashboard.html')
+    return render(request, 'dashboard.html')
 
 
 

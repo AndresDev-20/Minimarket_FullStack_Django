@@ -1,0 +1,53 @@
+{% extends "layout/base.html" %} 
+
+{% block content %}
+<div class="Login">
+  <div class="login__container">
+    <div class="login__box">
+      <h1 class="login__title">Login</h1>
+      <form class="login__form" action="" method="POST">
+        {% csrf_token %}
+        <div>
+          <label class="login__label" for="username">Username:</label>
+          <div class="input-container">
+            <i class="fa-solid fa-user"></i>
+            <input
+              class="login__input"
+              type="text"
+              id="username"
+              name="username"
+              required
+              placeholder="Andres.dev"
+            />
+          </div>
+        </div>
+        <div>
+          <label class="login__label" for="password">Password:</label>
+          <div class="input-container">
+            <input
+              class="login__input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="********"
+              required
+            />
+          </div>
+        </div>
+
+        <button class="login__button" type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="login__container container2">
+    <h1 class="login__title2">Welcome to Dashboard</h1>
+    <p class="login__text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, earum.
+      Harum placeat excepturi temporibus! Eaque, accusamus. Voluptatem
+      consequatur fugit incidunt qui optio libero explicabo illum, fugiat nisi a
+      eveniet impedit.
+    </p>
+  </div>
+</div>
+{% endblock %}

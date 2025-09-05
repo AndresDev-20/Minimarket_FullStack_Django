@@ -6,7 +6,7 @@ from .forms import ProductForm, CategoryForm
 # Products
 def product_list(request):
     list_products = Product.objects.all()
-    return render(request, 'dashboard/products.html', {'list_products': list_products})
+    return render(request, 'product/products.html', {'list_products': list_products})
 
 def product_create(request):
     form = ProductForm()
@@ -14,8 +14,8 @@ def product_create(request):
         form = ProductForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'dashboard/products.html', {'list_products': Product.objects.all()})
-    return render(request, 'dashboard/gestion/product_create.html', {'form': form})
+            return render(request, 'product/products.html', {'list_products': Product.objects.all()})
+    return render(request, 'product/create.html', {'form': form})
 
 
 
@@ -23,7 +23,7 @@ def product_create(request):
 # Categories
 def category_list(request):
     list_categories = Category.objects.all()
-    return render(request, 'dashboard/categories.html', {'list_categories': list_categories})
+    return render(request, 'category/categories.html', {'list_categories': list_categories})
 
 def category_create(request):
     form = CategoryForm()
@@ -31,5 +31,5 @@ def category_create(request):
         form = CategoryForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'dashboard/categories.html', {'list_categories': Category.objects.all()})
-    return render(request, 'dashboard/gestion/category_create.html', {'form': form})
+            return render(request, 'category/categories.html', {'list_categories': Category.objects.all()})
+    return render(request, 'category/create.html', {'form': form})
