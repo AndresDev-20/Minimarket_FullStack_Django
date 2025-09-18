@@ -1,10 +1,13 @@
 {% extends 'dashboard.html' %}
 
 {% block dashboard_content %}
-  <h1>Create Category</h1>
-  <form method="post">
+<div class="Category_add">
+  <a href="{% url 'category' %}" class="Button__back">Back to Categories</a>
+  <h1 class="Category__add-title">Create Category</h1>
+  <form method="post" class="Category__form">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Create</button>
+    <button type="submit" class="Category__add-button">Create</button>
   </form>
+</div>
 {% endblock %}

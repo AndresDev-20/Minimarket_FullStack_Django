@@ -10,3 +10,6 @@ class CategoryForm(forms.ModelForm):
     class Meta:
         model = Category
         fields = ("name",)
+        widgets = {
+            "name": forms.TextInput(attrs={"class": "Category__input", "placeholder": "Ingrese la categoría"}),
+        }

@@ -122,6 +122,7 @@ input:focus {
 
 .login__title2 {
   margin-top: -7em;
+  text-align: center;
 }
 
 .login__text {
@@ -357,6 +358,57 @@ td {
 .Button__back {
   color: var(--primary-color);
   border-bottom: 1px solid var(--primary-color);
+}
+
+/* estilos del formulario de categorias */
+.Category_add {
+  width: 100%;
+  max-width: 400px;
+  margin: 10em auto;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--border-color);
+}
+
+.Category__add-title {
+  font-size: 26px;
+  margin-bottom: 10px;
+  margin-top: 1em;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.Category__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.Category__input {
+  width: 100%;
+  max-width: 36em;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  background-color: #f7fafc;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  margin-top: .5em;
+}
+
+.Category__add-button {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 
