@@ -8,7 +8,18 @@ from .forms import ProductForm, CategoryForm
 # List all products
 def product_list(request):
     list_products = Product.objects.all()
-    return render(request, 'product/products.html', {'list_products': list_products})
+    list_categories = Category.objects.all()
+    return render(request, 'product/products.html', {'list_products': list_products, 'list_categories': list_categories})
+
+# Filter products by category
+def product_filter(request):
+    category_id = request.GET.get('category')
+    list_categories = Category.objects.all()
+    if category_id:
+        list_products = Product.objects.filter(category_id=category_id)
+    else:
+        list_products = Product.objects.all()
+    return render(request, 'product/products.html', {'list_products': list_products, 'list_categories': list_categories, 'selected_category': int(category_id) if category_id else None})
 
 # Create a new product
 def product_create(request):
