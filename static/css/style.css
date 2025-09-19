@@ -321,11 +321,22 @@ td {
   border-radius: 4px;
 }
 
-.Button__delete {
-  background-color: red;
-  padding: 0.3em;
+.Button__delete-form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
   width: 100%;
   max-width: 90px;
+}
+
+.Button__delete {
+  background-color: red;
+  cursor: pointer;
+  border: none;
+  padding: 0.4em;
+  width: 100%;
+  max-width: 95px;
   color: white;
   border-radius: 4px;
 }

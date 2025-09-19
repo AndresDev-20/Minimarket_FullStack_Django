@@ -1,0 +1,15 @@
+{% extends 'dashboard.html' %}
+
+{% block dashboard_content %}
+  <div class="product-form">
+  <a href="{% url 'category' %}" class="product-form__back">← Volver a la lista de categorias</a>
+  
+  <h1 class="product-form__title"> Actualizar Categoria</h1>
+  
+  <form method="POST" class="product-form__form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="product-form__btn">Actualizar Categoria</button>
+  </form>
+</div>
+{% endblock %}

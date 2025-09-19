@@ -1,45 +1,54 @@
-{% extends 'dashboard.html' %}
+{% extends 'dashboard.html' %} 
 
 {% block dashboard_content %}
 <div class="Products">
-<div class="Products__header"> 
-  <h1>Products</h1>
-  <div class="Products__actions">
-    <a class="Button__add" href="{% url 'product_create' %}">Nuevo Producto</a>
-    <a class="Button__view" href="{% url 'category' %}">Ver Categorias</a>
+  <div class="Products__header">
+    <h1>Products</h1>
+    <div class="Products__actions">
+      <a class="Button__add" href="{% url 'product_create' %}"
+        >Nuevo Producto</a
+      >
+      <a class="Button__view" href="{% url 'category' %}">Ver Categorias</a>
+    </div>
   </div>
-</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Price</th> 
-      <th>Stock</th>
-      <th>Is Active</th>
-      <th>Category</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for product in list_products %}
-    <tr>
-      <td>{{ product.id }}</td>
-      <td>{{ product.name }}</td>
-      <td>{{ product.sale_price }}</td>
-      <td>{{ product.stock }}</td>
-      <td>{{ product.is_active }}</td>
-      <td>{{ product.category }}</td>
-      <td class="Buttons__actions">
-        <a class="Button__edit" href="">Editar</a>
-        <a class="Button__delete" href="">Eliminar</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Is Active</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in list_products %}
+      <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.sale_price }}</td>
+        <td>{{ product.stock }}</td>
+        <td>{{ product.is_active }}</td>
+        <td>{{ product.category }}</td>
+        <td class="Buttons__actions">
+          <a class="Button__edit" href="{% url 'product_edit' product.id %}"
+            >Editar</a
+          >
+          <form
+            action="{% url 'product_delete' product.id %}"
+            method="post"
+            class="Button__delete-form">
+            {% csrf_token %}
+            <button type="submit" class="Button__delete">Eliminar</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 
 {% endblock %}
