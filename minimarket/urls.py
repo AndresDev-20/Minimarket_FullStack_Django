@@ -8,5 +8,5 @@ urlpatterns = [
     path('products/', include('apps.products.urls')),
     path('customers/', include('apps.customers.urls')),
     path('suppliers/', include('apps.suppliers.urls')),
-    path('sales/', include('apps.sales.urls'))
+    path('sales/', include('apps.sales.urls')) 
 ]
