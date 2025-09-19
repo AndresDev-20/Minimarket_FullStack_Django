@@ -1,10 +1,13 @@
 {% extends 'dashboard.html' %}
 
 {% block dashboard_content %}
-  <h2>Crear Cliente</h2>
-  <form method="post">
+  <div class="product-form">
+  <a href="{% url 'customer' %}" class="product-form__back">← Volver a la lista de clientes</a>
+  <h1 class="product-form__title">Agregar Cliente</h1>
+  <form method="POST" class="product-form__form">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Guardar</button>
+    <button type="submit" class="product-form__btn">Crear Cliente</button>
   </form>
+</div>
 {% endblock %}
