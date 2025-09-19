@@ -5,3 +5,5 @@ from .models import Customer
 def customer(request):
     customers = Customer.objects.all()
     return render(request, 'customers.html', {'customers': customers})
+
+#def Customer_create(request):

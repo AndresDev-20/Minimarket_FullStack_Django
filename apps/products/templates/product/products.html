@@ -13,9 +13,10 @@
   </div>
 
   <div>
-    <h3>Filtrar por categoria</h3>
-    <form method="GET" action="{% url 'product_filter' %}">
-      <select name="category">
+    <h3 class="Products__filter-title">Filtrar por categoria</h3>
+    <form method="GET" action="{% url 'product_filter' %}" class="Products__filter-form">
+      {% csrf_token %}
+      <select name="category" class="Products__filter" >
         <option value="">Todas las categorias</option>
         {% for category in list_categories %}
         <option value="{{ category.id }}">{{ category.name }}</option>

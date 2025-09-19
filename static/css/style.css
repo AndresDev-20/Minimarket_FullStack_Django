@@ -274,6 +274,39 @@ input:focus {
   gap: 1em;
 }
 
+.Products__filter-title {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--primary-color);
+  align-self: center;
+}
+
+.Products__filter {
+  padding: 0.1em;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: #f7fafc;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  margin-top: 1em;
+}
+
+.Products__filter:focus {
+  border-color: #2c7a7b;
+  outline: none;
+  box-shadow: 0 0 6px rgba(44, 122, 123, 0.4);
+}
+
+.Button__filter {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
 /* Tablas */
 table {
   width: 100%;
