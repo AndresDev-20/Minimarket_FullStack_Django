@@ -31,7 +31,9 @@
       <td>{{ customer.email }}</td>
       <td>{{ customer.phone_number }}</td>
       <td>{{ customer.created_at }}</td>
-      <td>Ver Compras</td>
+      <td>
+        <a href="{% url 'customer_purchases' customer.id %}" class="Button__view-purchases">Ver Compras</a>
+      </td>
       <td class="Buttons__actions">
         <a class="Button__edit" href="{% url 'edit_customer' customer.id %}">Editar</a>
         <form method="POST" action="{% url 'delete_customer' customer.id %}" class="Button__delete-form">

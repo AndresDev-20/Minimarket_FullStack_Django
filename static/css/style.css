@@ -483,6 +483,7 @@ td {
   margin-bottom: 1em;
 }
 
+
 /* Estilos para la tabla de proveedores */
 .Suppliers {
   padding: 1.5em;
@@ -518,6 +519,44 @@ td {
   cursor: pointer;
   transition: background 0.2s ease-in-out;
 }
+
+.Button__view-purchases {
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+
+/* Estilos para la tabla de compras de cada usuario */
+.Purchases__customer {
+  padding: 1.5em;
+}
+
+.Purchases__customer-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.Purchases__customer-back {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.Purchases__customer-back:hover {
+  text-decoration: underline;
+}
+
+.detail__purchase{
+  padding: 1.5em;
+}
+
 
 /* estilos de formularios */
 .product-form {

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Customer
 from .forms import CustomerForm 
+from apps.sales.models import Sale, SalesDetail
 
 # Create your views here.
 def customer(request):
@@ -46,3 +47,15 @@ def Customer_delete(request, pk):
         customer.delete()
         return redirect('customer')
     return render(request, 'delete.html', {'customer': customer})
+
+
+# view customer purchases
+def customer_purchases(request, pk):
+    customer = Customer.objects.get(id=pk)
+    sales = Sale.objects.filter(customer=customer)
+    return render(request, 'purchases.html', {'customer': customer, 'sales': sales})
+
+def customer_detail_sale(request, pk):
+    customer = Customer.objects.get(id=pk)
+    detail_sales = SalesDetail.objects.filter(sale__customer=customer)
+    return render(request, 'customer_detail.html', {'customer': customer, 'detail_sales': detail_sales})

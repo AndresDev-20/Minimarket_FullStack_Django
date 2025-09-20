@@ -1,0 +1,35 @@
+{% extends 'dashboard.html' %}
+
+{% block dashboard_content %}
+<div class="Purchases__customer">
+  <a href="{% url 'customer' %}" class="Purchases__customer-back">← Volver a la lista de Clientes</a>
+  
+  <h1 class="Purchases__customer-title"> Compras de {{ customer.first_name }} {{ customer.last_name }}</h1>
+ <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Total</th>
+        <th>Productos</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sale in sales %}
+      <tr>
+        <td>{{ sale.id }}</td>
+        <td>{{ sale.date }}</td>
+        <td>{{ sale.total }}</td>
+        <td>
+            <a href="{% url 'customer_detail_sale' sale.id %}" class="Button__view-purchases">Ver</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="4">No hay compras registradas para este cliente.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
