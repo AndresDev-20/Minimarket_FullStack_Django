@@ -1,0 +1,38 @@
+{% extends 'dashboard.html' %}
+
+{% block dashboard_content %}
+  <div class="detail__purchase">
+     <a href="{% url 'sales' %}" class="Purchases__customer-back">← Volver a la lista de las ventas </a>
+
+  
+  <div class="Products__header">
+<h1 class="Purchases__customer-title">Productos de la venta {{ sale.id }} del cliente {{ sale.customer.first_name }} {{ sale.customer.last_name }}</h1>
+    <div class="Products__actions">
+      <a class="Button__add" href="{% url 'create_detail_sale' sale.id %}">Agregar Produto</a>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for detail in detail_sales %}
+      <tr>
+        <td>{{ detail.product.name }}</td>
+        <td>{{ detail.quantity }}</td>
+        <td>{{ detail.price_unit }}</td>
+        <td>{{ detail.subtotal }}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="4">No hay detalles de ventas para este cliente.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</div>
+{% endblock %}

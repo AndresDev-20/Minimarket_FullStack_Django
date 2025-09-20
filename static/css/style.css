@@ -653,6 +653,38 @@ td {
     background: #285e61;
 }
 
+
+/* Estilos para la tabla de ventas */ 
+.Sales {
+  padding: 1.5em;
+}
+
+.Sales__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.Sales__title {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.Sales__filter > ul {
+  display: flex;
+  gap: 4em;
+}
+
+.Sales__filter > ul > li > a {
+  border-bottom: 2px solid var(--primary-color);
+  padding: 0.3em 1.2em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
     .product-form {

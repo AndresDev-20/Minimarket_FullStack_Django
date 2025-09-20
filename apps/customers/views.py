@@ -56,6 +56,7 @@ def customer_purchases(request, pk):
     return render(request, 'purchases.html', {'customer': customer, 'sales': sales})
 
 def customer_detail_sale(request, pk):
-    customer = Customer.objects.get(id=pk)
-    detail_sales = SalesDetail.objects.filter(sale__customer=customer)
-    return render(request, 'customer_detail.html', {'customer': customer, 'detail_sales': detail_sales})
+    sale = Sale.objects.get(id=pk)
+    print(sale)
+    detail_sales = SalesDetail.objects.filter(sale=sale)
+    return render(request, 'customer_detail.html', {'customer': sale.customer, 'detail_sales': detail_sales})

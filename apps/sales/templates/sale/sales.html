@@ -1,6 +1,54 @@
 {% extends "dashboard.html" %}
 
 {% block dashboard_content %}
-  <h1>Sales</h1>
-  <p>List of sales will be displayed here.</p>
+  <div class="Sales">
+     <div class="Sales__header">
+    <h1 class="Sales__title">Ventas</h1>
+    <div class="Sales__actions">
+      <a class="Button__add" href="{% url 'create_sale' %}">Nueva Venta</a>
+    </div>
+  </div>
+
+  <div class="Sales__filter">
+    <ul>
+      <li><a href="#">Todas las ventas</a></li>
+      <li><a href="#">Ventas del dia</a></li>
+      <li><a href="#">Ventas de la semana</a></li>
+      <li><a href="#">Ventas del mes</a></li>
+      <li><a href="#">Ventas del año</a></li>
+    </ul>
+  </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Fecha</th>
+          <th>Total</th>
+          <th>Productos</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for sale in sales%}
+        <tr>
+          <td>{{ sale.id }}</td>
+          <td>{{ sale.customer}}</td>
+          <td>{{ sale.date }}</td>
+          <td>{{ sale.total }}</td>
+          <td>
+            <a class="Button__view-purchases" href="{% url 'detail_sale' sale.id %}">Ver o agregar</a>
+          </td>
+          <td class="Buttons__actions">
+            <form action="#" method="post" class="Button__delete-form">
+              {% csrf_token %}
+              <button class="Button__delete" type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar esta venta?');">Eliminar</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}
