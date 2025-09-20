@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #ff0101;
+  --primary-color: #30c0dc;
   --primary-hover-color: teal;
   --border-radius: 5em;
   --border-color: #ccc;
@@ -465,6 +465,15 @@ td {
   font-size: 1.5em;
   font-weight: 600;
   color: var(--primary-color);
+}
+
+.Customers__input {
+  padding: 0.4em;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: #f7fafc;
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
 
 .Customers__search {

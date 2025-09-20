@@ -3,7 +3,10 @@
 <div class="Customers">
   <h1 class="Customers__title">Clientes</h1>
   <div class="Customers__search">
-    <input class="Customers__search-input" type="number" placeholder="Busca por CC" />
+    <form method="GET" action="{% url 'customer_filter' %}" class="Customers__form">
+      <input type="text" name="cc" placeholder="Buscar por Identificación" value="{{ search_cc|default:'' }}" class="Customers__input">
+      <button type="submit" class="Button__filter">Buscar</button>
+    </form>
     <a class="Button__add" href="{% url 'create_customer' %}">Nuevo Cliente</a>
   </div>
 <table>
@@ -30,8 +33,11 @@
       <td>{{ customer.created_at }}</td>
       <td>Ver Compras</td>
       <td class="Buttons__actions">
-        <a class="Button__edit" href="">Editar</a>
-        <a class="Button__delete" href="">Eliminar</a>
+        <a class="Button__edit" href="{% url 'edit_customer' customer.id %}">Editar</a>
+        <form method="POST" action="{% url 'delete_customer' customer.id %}" class="Button__delete-form">
+          {% csrf_token %}
+          <button type="submit" class="Button__delete">Eliminar</button>
+        </form>
       </td>
     </tr>
     {% endfor %}
