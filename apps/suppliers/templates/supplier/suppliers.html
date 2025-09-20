@@ -4,7 +4,7 @@
   <div class="Suppliers">
     <div class="Suppliers__header">
       <h2>Lista de Proveedores</h2>
-      <button class="Button__add">Añadir Proveedor</button>
+      <a class="Button__add" href="{% url 'create_supplier' %}">Nuevo Proveedor</a>
     </div>
 
     <table>
@@ -29,8 +29,11 @@
           <td>{{ supplier.phone }}</td>
           <td>{{ supplier.address }}</td>
           <td class="Buttons__actions">
-            <a class="Button__edit" href="">Editar</a>
-            <a class="Button__delete" href="">Eliminar</a>
+            <a class="Button__edit" href="{% url 'edit_supplier' supplier.id %}">Editar</a>
+            <form method="POST" action="{% url 'delete_supplier' supplier.id %}" class="Button__delete-form">
+              {% csrf_token %}
+              <button type="submit" class="Button__delete">Eliminar</button>
+            </form>
           </td>
         </tr>
         {% endfor %}
