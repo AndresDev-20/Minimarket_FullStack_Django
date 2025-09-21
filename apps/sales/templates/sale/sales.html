@@ -11,11 +11,11 @@
 
   <div class="Sales__filter">
     <ul>
-      <li><a href="#">Todas las ventas</a></li>
-      <li><a href="#">Ventas del dia</a></li>
-      <li><a href="#">Ventas de la semana</a></li>
-      <li><a href="#">Ventas del mes</a></li>
-      <li><a href="#">Ventas del año</a></li>
+      <li><a href="{% url 'sales' %}?filter=all">Todas las ventas</a></li>
+    <li><a href="{% url 'sales' %}?filter=day">Ventas del día</a></li>
+    <li><a href="{% url 'sales' %}?filter=week">Ventas de la semana</a></li>
+    <li><a href="{% url 'sales' %}?filter=month">Ventas del mes</a></li>
+    <li><a href="{% url 'sales' %}?filter=year">Ventas del año</a></li>
     </ul>
   </div>
 
