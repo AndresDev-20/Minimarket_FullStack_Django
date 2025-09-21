@@ -1,20 +1,85 @@
-{% extends "layout/base.html" %}
-{% load static %}
-
-{% block header %}
-<header class="header">
-    {% include "layout/header.html" %}
-</header>
-{% endblock %}
-
-{% block content %}
+{% extends "layout/base.html" %} {% load static %} {% block header %}
+<header class="header">{% include "layout/header.html" %}</header>
+{% endblock %} {% block content %}
 <div class="dashboard">
-    <div class="dashboard__box-menu">
-        {% include "layout/menu.html" %}
+  <div class="dashboard__box-menu">{% include "layout/menu.html" %}</div>
+  <div class="dashboard__content">
+    {% block dashboard_content %}
+    <ul class="dashboard__stats">
+      <li class="dashboard__stat-card">
+        <h1 class="dashboard__stat-title">Total de ventas hoy</h1>
+        <h2 class="dashboard__stat-value">{{ day }}</h2>
+      </li>
+      <li class="dashboard__stat-card">
+        <h1 class="dashboard__stat-title">Total de ventas del mes</h1>
+        <h2 class="dashboard__stat-value">{{ month }}</h2>
+      </li>
+      <li class="dashboard__stat-card">
+        <h1 class="dashboard__stat-title">Ganancias</h1>
+        <h2 class="dashboard__stat-value">{{ total_earnings_formatted }}</h2>
+      </li>
+      <li class="dashboard__stat-card">
+        <h1 class="dashboard__stat-title">Inventario</h1>
+        <h2 class="dashboard__stat-value">--</h2>
+      </li>
+    </ul>
+    <div class="dashboard__chart-container">
+      <canvas id="dashboardChart"></canvas>
     </div>
-    <div class="dashboard__content"> 
-        {% block dashboard_content %}
-        <h1>dashboard</h1>
-        {% endblock %}
-    </div>
-{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById('dashboardChart').getContext('2d');
+      const dashboardChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ['Ventas Hoy', 'Ventas Mes', 'Ganancias'],
+              datasets: [{
+                  label: '',
+                  data: [{{ day }}, {{ month }}, {{ total_earnings|default:10|floatformat }}],
+                  backgroundColor: [
+                      '#36A2EB',
+                      '#4BC0C0',
+                      '#FFCE56'
+                  ],
+                  borderRadius: 8,  // Bordes redondeados de las barras
+                  barThickness: 40  // Grosor de cada barra
+              }]
+          },
+          options: {
+                responsive: true,
+          plugins: {
+              legend: { display: false },
+              title: {
+                  display: true,
+                  text: 'Resumen de Ventas y Ganancias',
+                  font: { size: 16 }
+              },
+              tooltip: {
+                  callbacks: {
+                      label: function(context) {
+                          return context.parsed.y.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
+                      }
+                      }
+                  }
+              },
+              scales: {
+                  y: {
+                      beginAtZero: true,
+                     min: 0,
+                  max: 100, // <- Ajusta aquí de 10, 100 o el rango que necesites
+                  ticks: {
+                      stepSize: 10, // <- Cada cuánto se marca en el eje
+                      callback: function(value) {
+                          return value.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
+                      }
+                      }
+                  }
+              }
+          }
+      });
+    </script>
+
+    {% endblock %}
+  </div>
+  {% endblock %}
+</div>
