@@ -17,7 +17,7 @@ def login_view(request):
             else:
                 return render(request, 'login.html', {'error': 'No tienes permisos de administrador.'})
         else:
-            return render(request, 'login.html', {'error': 'Credenciales inválidas.'})
+            return render(request, 'login.html', {'res': True})
     return render(request, 'login.html')
 
 

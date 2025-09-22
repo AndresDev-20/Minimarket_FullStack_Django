@@ -35,7 +35,7 @@
               labels: ['Ventas Hoy', 'Ventas Mes', 'Ganancias'],
               datasets: [{
                   label: '',
-                  data: [{{ day }}, {{ month }}, {{ total_earnings|default:10|floatformat }}],
+                  data: [{{ day }}, {{ month }}, {{ total_earnings|default:0|floatformat }}],
                   backgroundColor: [
                       '#36A2EB',
                       '#4BC0C0',

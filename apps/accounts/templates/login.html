@@ -10,7 +10,6 @@
         <div>
           <label class="login__label" for="username">Username:</label>
           <div class="input-container">
-            <i class="fa-solid fa-user"></i>
             <input
               class="login__input"
               type="text"
@@ -47,5 +46,15 @@
       contraseña. Si no tienes una cuenta, por favor contacta al soporte.
     </p>
   </div>
-</div>
+  {% if res %}
+  <div class="Login__error" id="errorModal">
+    <div class="Login__error-box">
+      <h1 style="color: red;">XXX</h1>
+      <h3>Error al ingresar Contraseña o usuario inválidos...</h3>
+      <button onclick="document.getElementById('errorModal').style.display='none'">
+        Volver a intentar
+      </button>
+    </div>
+  </div>
+  {% endif %}
 {% endblock %}
