@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from apps.sales.models import Sale, SalesDetail
+from apps.products.models import Product
 from datetime import date
 
 # Create your views here.
@@ -30,7 +31,8 @@ def dashboard_view(request):
     sale_detail_earnings = SalesDetail.objects.all()
     total_earnings = sum(detail.profit for detail in sale_detail_earnings)
     total_earnings_formatted = "{:,.2f}".format(total_earnings).replace(",", "X").replace(".", ",").replace("X", ".")
-    return render(request, 'dashboard.html', {"day": sales_list, "month": sales_list_mont, "total_earnings_formatted": total_earnings_formatted, "total_earnings": total_earnings})
+    products = len(Product.objects.all())
+    return render(request, 'dashboard.html', {"day": sales_list, "month": sales_list_mont, "total_earnings_formatted": total_earnings_formatted, "total_earnings": total_earnings, "Total_products": products})
 
 
 

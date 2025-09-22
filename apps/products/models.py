@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from apps.suppliers.models import Supplier
 
 # Create your models here.
 class Category(models.Model):
@@ -20,6 +21,7 @@ class Category(models.Model):
 
 class Product(models.Model): 
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, related_name='products', null=True)
+    supplier = models.ForeignKey(Supplier, on_delete=models.SET_NULL, related_name='products', null=True)
     name = models.CharField(max_length=255, null=False, blank=False)
     purchase_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     sale_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
